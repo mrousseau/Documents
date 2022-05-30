@@ -1,9 +1,15 @@
 #Docker
 
-docker run <nom_de_l_image>                 <- démarrer un container
-docker run -it <nom_de_l_image> bash        <- executer dans le container
+```
+docker run <nom_de_l_image>                 #démarrer un container
+```
+
+
+```
+docker run -it <nom_de_l_image> bash        #executer dans le container
             i -> interactive
             t -> terminal 
+```
 
 quand on lance docker run on lance docker create puis docker container start
 
