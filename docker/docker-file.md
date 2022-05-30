@@ -37,5 +37,5 @@ console.log("Hello World");                 # helloworld.js
 ### docker commands
 
 ```
- docker build -t nodejs:latest .             # construire une image docker avec le nomage ( -t <le_nom>)
+ docker build -t nodejs:latest .             # construire une image docker avec le nomage ( -t <le_nom>),  (.) pour indiquer l'emplacemende des fichiers pour l'image
 ```
