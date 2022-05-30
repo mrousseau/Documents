@@ -72,3 +72,11 @@ docker conatiner exec <nom du container ou id> <exec ma cmd>            # execut
 ```
 docker container cp ./file.txt myContainer:/home                        # copie un fichier dans un container
 ```
+
+```
+docker container top myContainer                                        # connaitre ce qui est executer sur le docker
+```
+
+```
+docker container diff myContainer                                       # permet de connaitre la différence en mon container et l'image pour voir les création modificiation etc...
+```
