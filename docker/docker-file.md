@@ -23,7 +23,7 @@ RUN apt-get install --yes nodejs
 
 RUN apt-get install --yes build-essential
 
-COPY ./helloworld.js /var/www§
+COPY ./helloworld.js /var/www/
 
 CMD ["node", "/var/wwww/helloworld.js" ]
 
@@ -37,5 +37,5 @@ console.log("Hello World");                 # helloworld.js
 ### docker commands
 
 ```
- docker build -t nodejs:latest             # construire une image docker avec le nomage ( -t <le_nom>)
+ docker build -t nodejs:latest .             # construire une image docker avec le nomage ( -t <le_nom>)
 ```
