@@ -11,26 +11,26 @@
 * 5 - run node js to execute helloworld
 
 ```
-FROM ubuntu:latest
+FROM ubuntu:latest                                                          # depuis l image d'ubuntu (derniere version)
 
-RUN apt-get update --yes
+RUN apt-get update --yes                                                    # un layer pour mettre a jour les repo
 
-RUN apt-get install --yes curl
+RUN apt-get install --yes curl                                              # un layer pour installer curl
 
-RUN curl --silent  --location http://deb/nodesource.com/setup_14.x
+RUN curl --silent  --location http://deb/nodesource.com/setup_14.x          # un layer pour dl lle repo de node js 
 
-RUN apt-get install --yes nodejs
+RUN apt-get install --yes nodejs                                            # un layer pour installer node js
 
-RUN apt-get install --yes build-essential
+RUN apt-get install --yes build-essential                                   # un layer pour insaller les build-essential 
 
-COPY ./helloworld.js /var/www/
+COPY ./helloworld.js /var/www/                                              # on copie le fichier à executer dans l'emplacement qui se trouve dans le container dans l'exemple \var\www\
 
-CMD ["node", "/var/wwww/helloworld.js" ]
-
-```
+CMD ["node", "/var/wwww/helloworld.js" ]                                    # on lance le script js 
 
 ```
-console.log("Hello World");                 # helloworld.js
+
+```
+console.log("Hello World");                 # helloworld.js 
 ```
 
 
