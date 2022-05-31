@@ -1,4 +1,4 @@
-# Docker-File
+# Dockerfile
 
 ## exercices:
 
@@ -11,27 +11,57 @@
 * 5 - run node js to execute helloworld
 
 ```
-FROM ubuntu:latest                                                          # depuis l image d'ubuntu (derniere version)
+FROM ubuntu:latest
+# commentaire : liste des Runs
+RUN apt-get update --yes
 
-RUN apt-get update --yes                                                    # un layer pour mettre a jour les repo
+RUN apt-get install --yes curl
 
-RUN apt-get install --yes curl                                              # un layer pour installer curl
+RUN curl --silent  --location https://deb.nodesource.com/setup_18.x
 
-RUN curl --silent  --location http://deb/nodesource.com/setup_14.x          # un layer pour dl lle repo de node js 
+RUN apt-get install --yes nodejs
 
-RUN apt-get install --yes nodejs                                            # un layer pour installer node js
+RUN apt-get install --yes build-essential
 
-RUN apt-get install --yes build-essential                                   # un layer pour insaller les build-essential 
+COPY ./helloworld.js /var/www/
 
-COPY ./helloworld.js /var/www/                                              # on copie le fichier à executer dans l'emplacement qui se trouve dans le container dans l'exemple \var\www\
+CMD ["node", "/var/www/helloworld.js" ]
 
-CMD ["node", "/var/wwww/helloworld.js" ]                                    # on lance le script js 
+```
 
+##V2
+```
+FROM ubuntu:latest
+# commentaire : liste des Runs
+RUN apt-get update --yes
+
+RUN apt-get install --yes curl
+
+RUN curl --silent  --location https://deb.nodesource.com/setup_18.x
+
+RUN apt-get install --yes nodejs
+
+RUN apt-get install --yes build-essential
+
+WORKDIR /var/www/
+
+COPY ./helloworld.js .
+
+CMD ["node", "helloworld.js" ]
 ```
 
 ```
 console.log("Hello World");                 # helloworld.js 
 ```
+
+```
+ADD # argument récupérer des fichier des éléments d'une source exterieur décompresse automatiquement
+WORKDIR # définit l'emplacement de travail dans le container
+ENTRYPOINT # fait la mmême chose que CMD mais ne permet pas d'insertion exemple docker run  nodejs:test echo "blabla" ne fonctionnera pas donc permet d'éviter a l'utilisateur de rajouter des instruction lors de l'execution.
+
+ARG #permet de passer des params pour le build
+```
+
 
 
 ### docker commands
