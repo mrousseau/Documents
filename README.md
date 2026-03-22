@@ -21,4 +21,12 @@ Base de connaissances personnelle : aide-mémoires techniques et formations comp
 | Formation | Description |
 |-----------|-------------|
 | [POO, Design Patterns & Architecture](./formations/formation-poo-complete.md) | Formation complète multi-langages (C#, Java, C++, Python) — POO, SOLID, 12 design patterns, architectures (MVC, Clean, Hexagonale, Microservices) |
+| [Git — De Zéro à Expert](./formations/formation-git-complete.md) | Maîtriser Git du premier commit à la gestion de projets complexes en équipe |
 | [Kubernetes](./formations/kubernetes-formation-complete.md) | Formation complète du débutant au certifié CKA/CKAD — 18+ modules (architecture, pods, networking, Helm, GitOps, sécurité) |
+
+### Bonus
+
+| Bonus | Description |
+|-------|-------------|
+| [Design Patterns Expert](./formations/bonus-01-design-patterns-expert.md) | Patterns avancés, anti-patterns, combinaisons et application dans des systèmes réels |
+| [Architecture Expert](./formations/bonus-02-architecture-expert.md) | Architectures modernes, patterns distribués, DDD et principes de scalabilité |
